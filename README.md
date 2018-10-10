@@ -25,7 +25,7 @@ Build the Docker image:
 
 ```sh
 $ eval $(minikube docker-env)
-$ docker build -t spark-hadoop:2.2.1 .
+$ docker build -t spark-hadoop:2.2.1 -f ./docker/Dockerfile ./docker
 ```
 
 Create the deployments and services:

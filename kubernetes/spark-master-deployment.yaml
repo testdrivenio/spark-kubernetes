@@ -1,5 +1,5 @@
 kind: Deployment
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 metadata:
   name: spark-master
 spec:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: spark-master
-          image: spark-hadoop:2.2.1
+          image: spark-hadoop:3.0.0
           command: ["/spark-master"]
           ports:
             - containerPort: 7077

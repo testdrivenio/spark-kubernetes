@@ -1,9 +1,9 @@
 # base image
-FROM java:openjdk-8-jdk
+FROM openjdk:11
 
 # define spark and hadoop versions
-ENV SPARK_VERSION=3.0.0
-ENV HADOOP_VERSION=3.3.0
+ENV SPARK_VERSION=3.2.0
+ENV HADOOP_VERSION=3.3.1
 
 # download and install hadoop
 RUN mkdir -p /opt && \

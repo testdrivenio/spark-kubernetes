@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: minikube-ingress
@@ -8,7 +8,10 @@ spec:
   - host: spark-kubernetes
     http:
       paths:
-      - path: /
-        backend:
-          serviceName: spark-master
-          servicePort: 8080
+        - pathType: Prefix
+          path: /
+          backend:
+            service:
+              name: spark-master
+              port:
+                number: 8080
